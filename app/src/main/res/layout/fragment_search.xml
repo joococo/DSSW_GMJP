@@ -6,13 +6,20 @@
     tools:context=".SearchFragment"
     android:id="@+id/InputRecord">
 
+    <SearchView
+        android:id="@+id/search_stn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="찾고싶은 역을 검색하세요." />
+
     <TextView
+        android:id="@+id/search_his"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SearchFragment"
-        android:textSize="25sp"
-        android:layout_centerInParent="true"/>
-
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:marginTop="50dp"
+        android:textSize="25sp" />
 
 
 </RelativeLayout>

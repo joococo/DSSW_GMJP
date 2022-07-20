@@ -3,13 +3,244 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubwayFragment">
+    tools:context=".SubwayFragment"
+    android:background="#6ACCE1CD">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/infom"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/station"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="성수역"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/linenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/station"
+            android:text="2호선"
+            android:textColor="#4CAF50"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/station"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="수도권 지하철"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/station_chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <ImageView
+            android:id="@+id/left"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/left_station" />
+
+        <ImageView
+            android:id="@+id/right"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_station" />
+
+        <ImageView
+            android:id="@+id/main"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/station_name" />
+
+        <ImageButton
+            android:id="@+id/left_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/left"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="1dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_chevron_left_24" />
+
+        <ImageButton
+            android:id="@+id/right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/right"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="1dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_chevron_right_24" />
+
+        <ImageView
+            android:id="@+id/line_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/station_name"
+            android:src="@drawable/ic_baseline_circle_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="-16dp"
+            android:layout_toStartOf="@+id/line_num"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/right_button"
+            android:text="건대입구"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/left_button"
+            android:text="뚝섬·용답"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/station_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="성수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SubwayFragment"
-        android:textSize="25dp"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/station_chart"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="20dp">
+
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="hh:mm a"
+            android:textSize="20sp"
+            android:layout_toLeftOf="@+id/refresh"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="열차 정보"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/refresh"/>
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_autorenew_24"
+            android:background="#00FFFFFF"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+        <ImageView
+            android:id="@+id/mainbox"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="@drawable/train_time" />
+
+        <ImageView
+            android:id="@+id/sub_box"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_above="@+id/mainbox"
+            android:layout_marginBottom="-30dp"
+            android:src="@drawable/train_time_top" />
+
+        <ImageView
+            android:id="@+id/mainbox2"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_below="@+id/mainbox"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/train_time" />
+
+        <ImageView
+            android:id="@+id/sub_box2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_above="@+id/mainbox2"
+            android:layout_marginBottom="-40dp"
+            android:src="@drawable/train_time_top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mainbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="성수(내선) 방면"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mainbox2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="145dp"
+            android:text="성수(외선), 용답 방면"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

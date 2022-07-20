@@ -3,6 +3,7 @@ package com.example.mysubway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,12 +19,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     BottomNavigationView bottomNavigationView;
 
     HomeFragment homeFragment = new HomeFragment();
     SubwayFragment subwayFragment = new SubwayFragment();
     MapFragment mapFragment = new MapFragment();
     SearchFragment searchFragment = new SearchFragment();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,4 +64,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-}
+
+
+    }

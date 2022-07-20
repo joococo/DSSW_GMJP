@@ -16,14 +16,13 @@ import android.widget.TextView;
 
 public class SubwayFragment extends Fragment {
 
-    private TextClock textClock;
-    private ImageButton imageButton;
-    private TextView textView;
+    int count;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_subway, container, false);
+        ImageButton imageButton2 = (ImageButton) v.findViewById(R.id.star);
         TextClock textClock = (TextClock) v.findViewById(R.id.clock);
         ImageButton imageButton = (ImageButton) v.findViewById(R.id.refresh);
         TextView textView = (TextView) v.findViewById(R.id.time);
@@ -31,7 +30,20 @@ public class SubwayFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textClock.getText());
+                textView.setText("(" + textClock.getText()+" 기준)");
+            }
+        });
+
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                count += 1;
+
+                if (count % 2 == 0)
+                    imageButton2.setSelected(false);
+                else
+                    imageButton2.setSelected(true);
+
             }
         });
 

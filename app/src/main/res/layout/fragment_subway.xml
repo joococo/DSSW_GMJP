@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context=".SubwayFragment"
     android:background="#6ACCE1CD">
 
@@ -39,6 +39,18 @@
             android:layout_marginTop="5dp"
             android:text="수도권 지하철"
             android:textSize="18dp" />
+
+        <ImageButton
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/linenum"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_stars_24"
+            android:tint="@color/button_background_colour" />
 
     </RelativeLayout>
 
@@ -147,20 +159,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/station_chart"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
         android:orientation="horizontal"
         android:layout_marginLeft="28dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="3dp">
 
         <TextClock
             android:id="@+id/clock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/refresh"
             android:format12Hour="hh:mm a"
-            android:textSize="20sp"
-            android:layout_toLeftOf="@+id/refresh"/>
+            android:textColor="#D36A6A6A"
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/infomation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="열차 정보"
@@ -171,19 +187,20 @@
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/refresh"/>
+            android:layout_toRightOf="@+id/infomation"/>
 
         <ImageButton
             android:id="@+id/refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_autorenew_24"
+            android:layout_alignParentRight="true"
             android:background="#00FFFFFF"
-            android:layout_alignParentRight="true"/>
+            android:src="@drawable/ic_baseline_autorenew_24" />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/a"
@@ -194,7 +211,7 @@
         <ImageView
             android:id="@+id/mainbox"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:src="@drawable/train_time" />
 
         <ImageView
@@ -205,13 +222,49 @@
             android:layout_marginBottom="-30dp"
             android:src="@drawable/train_time_top" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mainbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="성수(내선) 방면"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/first1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:text="성수 (내선)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/first1"
+            android:layout_marginLeft="20dp"
+            android:text="성수 (내선)" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/b"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
         <ImageView
-            android:id="@+id/mainbox2"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_below="@+id/mainbox"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/train_time" />
+        android:id="@+id/mainbox2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/mainbox"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/train_time" />
 
         <ImageView
             android:id="@+id/sub_box2"
@@ -224,22 +277,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/mainbox"
+            android:layout_alignLeft="@+id/mainbox2"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:text="성수(내선) 방면"
-            android:textColor="@color/black"/>
+            android:layout_marginTop="14dp"
+            android:text="성수(외선), 용답 방면"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/first2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="성수 (외선)" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/mainbox2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="145dp"
-            android:text="성수(외선), 용답 방면"
-            android:textColor="@color/black"/>
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/first2"
+            android:layout_marginLeft="20dp"
+            android:text="성수 (외선)" />
 
     </RelativeLayout>
 

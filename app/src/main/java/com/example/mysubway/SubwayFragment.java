@@ -26,6 +26,8 @@ public class SubwayFragment extends Fragment {
         TextClock textClock = (TextClock) v.findViewById(R.id.clock);
         ImageButton imageButton = (ImageButton) v.findViewById(R.id.refresh);
         TextView textView = (TextView) v.findViewById(R.id.time);
+        ImageButton leftsta = (ImageButton) v.findViewById(R.id.left_button);
+        ImageButton rightsta = (ImageButton) v.findViewById(R.id.right_button);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,20 @@ public class SubwayFragment extends Fragment {
                     imageButton2.setSelected(false);
                 else
                     imageButton2.setSelected(true);
+
+            }
+        });
+
+        leftsta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        rightsta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
             }
         });

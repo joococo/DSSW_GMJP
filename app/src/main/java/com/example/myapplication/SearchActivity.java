@@ -23,7 +23,6 @@ public class SearchActivity extends AppCompatActivity {
     private ArrayList<String> arrayList;
     private Button searchBtn;
     private String str;
-    private String shared = "file";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +40,9 @@ public class SearchActivity extends AppCompatActivity {
 
                 if(str != null){
                     MainActivity.list.add(str);
-                    adapter.notifyDataSetChanged();
+
                     MainActivity.recent_list.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
